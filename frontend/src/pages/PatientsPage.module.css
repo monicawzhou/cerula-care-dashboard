@@ -1,0 +1,23 @@
+.page {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.listPane {
+  width: 340px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border, #e2e8f0);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.detailPane {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  padding: 1.5rem;
+}

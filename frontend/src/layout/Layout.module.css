@@ -1,0 +1,20 @@
+.layout {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--sidebar-bg, #1a1d24);
+  color: var(--sidebar-text, #e2e8f0);
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--page-bg, #f1f5f9);
+}

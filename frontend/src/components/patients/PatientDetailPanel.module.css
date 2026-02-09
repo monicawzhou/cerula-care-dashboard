@@ -1,0 +1,42 @@
+.panel {
+  max-width: 720px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  color: #64748b;
+  text-align: center;
+  padding: 2rem;
+}
+
+.empty p {
+  margin: 0 0 1rem 0;
+}
+
+.createBtn {
+  padding: 0.5rem 1rem;
+  background: #0ea5e9;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.createBtn:hover {
+  background: #0284c7;
+}
+
+.loading,
+.error {
+  padding: 1rem;
+  color: #64748b;
+}
+
+.error {
+  color: #b91c1c;
+}

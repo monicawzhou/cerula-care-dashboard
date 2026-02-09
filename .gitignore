@@ -1,0 +1,17 @@
+# Python virtual environments
+venv/
+.venv/
+cerulaenv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+
+# Node
+node_modules/

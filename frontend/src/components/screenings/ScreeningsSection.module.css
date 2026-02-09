@@ -1,0 +1,55 @@
+.section {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border, #e2e8f0);
+}
+
+.title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.hint {
+  margin: 0 0 1rem 0;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+.muted,
+.error {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+.muted {
+  color: #64748b;
+}
+
+.chartWrap {
+  margin-bottom: 1.25rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table th,
+.table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.table th {
+  font-weight: 600;
+  color: #475569;
+}
