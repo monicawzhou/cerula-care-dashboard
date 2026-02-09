@@ -151,3 +151,29 @@ App: **http://localhost:5173**
 | Seed DB           | `cd backend && python seed.py` |
 | Run backend       | `cd backend && uvicorn main:app --reload` |
 | Run frontend      | `cd frontend && npm run dev` |
+
+
+## Design decisions and tradeoffs
+
+### Backend architecture
+- **FastAPI + SQLAlchemy** were chosen for request validation, automatic OpenAPI docs, and clear ORM modeling.
+- The backend is organized into **routers, schemas, and shared dependencies** instead of a single file to improve readability and scalability.
+- The database schema is defined explicitly in **SQL (`schema.sql`)** rather than relying only on ORM auto-generation, making it reproducible and reviewable.
+
+### Database modeling
+- **UUIDs** are used as primary keys to avoid ID collisions and allow records to be safely merged across environments.
+- Patient–care team relationships are modeled using an explicit **many-to-many join table** (`patient_care_team`) to support assignment metadata and future extensions.
+- Health screening data is stored as a **monthly time-series**, using a `DATE` column normalized to the first day of each month for efficient sorting and range queries.
+- Uniqueness constraints (for example, one screening per patient per month) are enforced at the database level to ensure data integrity.
+
+### API design
+- APIs are designed around **patient-centric workflows**, since care admins primarily operate on a patient-by-patient basis.
+- Care team assignments are exposed as **sub-resources** under patients (`/patients/{id}/care-team`) to keep related operations grouped and intuitive.
+- Assignment and unassignment endpoints rely on **database constraints** rather than duplicating logic in application code.
+- Input validation and error handling (for example, UUID validation) are performed early to return clear error responses.
+
+### Frontend architecture
+- The frontend uses a **master–detail layout**, with a patient list on the left and patient details on the right to minimize navigation.
+- **React Query (TanStack Query)** is used for server state, while local component state is used for UI concerns such as filters and form inputs.
+- Redux was intentionally avoided to reduce unnecessary complexity for the scope of this project.
+- Health screening trends are visualized using a **line chart** to prioritize clarity and quick comprehension.
