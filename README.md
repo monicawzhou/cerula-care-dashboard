@@ -1,3 +1,5 @@
+<img width="1248" height="904" alt="image" src="https://github.com/user-attachments/assets/9e1e868f-8fe6-41f3-a354-90f7dc983eb6" />
+
 # Cerula
 
 Patient management app with a FastAPI backend and React frontend.
@@ -95,7 +97,7 @@ psql -U your_username -d CerulaAppDatabase -f backend/sql/schema.sql
 
 ---
 
-## 5. Seed the database (optional)
+## 5. Seed the database
 
 Load sample patients, care team members, assignments, and health screenings:
 
